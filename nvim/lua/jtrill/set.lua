@@ -17,7 +17,7 @@ vim.opt.incsearch = true
 vim.opt.scrolloff=8
 vim.opt.swapfile=false
 vim.opt.signcolumn = "yes"
-
+vim.opt.backup = false
 vim.g.mapleader = " "
 vim.opt.clipboard = "unnamedplus"
 vim.opt.updatetime = 50
