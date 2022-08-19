@@ -16,8 +16,8 @@ return require('packer').startup(function(use)
   use( 'preservim/nerdtree')
   use( 'scrooloose/nerdcommenter')
   use( 'nvim-treesitter/nvim-treesitter')
-  use( 'jiangmiao/auto-pairs')
   use( 'ryanoasis/vim-devicons' )
   use( 'sheerun/vim-polyglot' )
 end)
+
 
