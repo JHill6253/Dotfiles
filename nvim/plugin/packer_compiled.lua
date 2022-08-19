@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/jhill/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/jiangmiao/auto-pairs"
+  },
   fd = {
     loaded = true,
     path = "/home/jhill/.local/share/nvim/site/pack/packer/start/fd",
@@ -87,7 +92,7 @@ _G.packer_plugins = {
   nerdtree = {
     loaded = true,
     path = "/home/jhill/.local/share/nvim/site/pack/packer/start/nerdtree",
-    url = "https://github.com/scrooloose/nerdtree"
+    url = "https://github.com/preservim/nerdtree"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -119,15 +124,20 @@ _G.packer_plugins = {
     path = "/home/jhill/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/home/jhill/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
-  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/jhill/.local/share/nvim/site/pack/packer/start/vim-airline",
     url = "https://github.com/vim-airline/vim-airline"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/home/jhill/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-polyglot"] = {
+    loaded = true,
+    path = "/home/jhill/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+    url = "https://github.com/sheerun/vim-polyglot"
   }
 }
 

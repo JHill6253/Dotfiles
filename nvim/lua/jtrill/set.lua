@@ -19,15 +19,8 @@ vim.opt.swapfile=false
 vim.opt.signcolumn = "yes"
 
 vim.g.mapleader = " "
+vim.opt.clipboard = "unnamedplus"
+vim.opt.updatetime = 50
+vim.opt.termguicolors = true
+vim.opt.completeopt = "noinsert,menuone,noselect"
 
-
-vim.cmd([[
-augroup MyColors
-autocmd!
-autocmd ColorScheme * highlight SignColumn guibg=#193549
-autocmd ColorScheme * highlight GitSignsAdd guibg=#193549 guifg=#3ad900
-autocmd ColorScheme * highlight GitSignsChange guibg=#193549 guifg=#ffc600
-autocmd ColorScheme * highlight GitSignsDelete guibg=#193549 guifg=#ff2600
-autocmd ColorScheme * highlight ColorColumn guifg=NONE guibg=#204563 gui=NONE
-augroup end
-]])
