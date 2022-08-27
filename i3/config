@@ -55,7 +55,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 10%+
 floating_modifier $mod
 # use multiple displays
 #exec --no-startup-id xrandr --output DP-1-0 &
-exec --no-startup-id xrandr --output eDP --auto --right-of DP-1-0 &
+#exec --no-startup-id xrandr --output eDP --off --right-of DP-1-0 --auto &
+xrandr --output eDP --off --right-of DP-1-0 --auto &
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 #start brave 
