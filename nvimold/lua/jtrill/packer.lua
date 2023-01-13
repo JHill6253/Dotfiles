@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
   use( 'nvim-treesitter/nvim-treesitter')
   use( 'ryanoasis/vim-devicons' )
   use( 'sheerun/vim-polyglot' )
+  use('sainnhe/vim-color-forest-night')
 end)
 
 

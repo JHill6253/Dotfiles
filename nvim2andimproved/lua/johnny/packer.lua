@@ -13,9 +13,13 @@ return require('packer').startup(function(use)
 	}
 	use({
 		'rose-pine/neovim',
-		as = 'rose-pine',
+		as = 'rose-pine'})
+
+	use({
+		'sainnhe/everforest',
+		as = 'everforest',
 		config = function()
-			vim.cmd('colorscheme rose-pine')
+			vim.cmd('colorscheme everforest')
 		end
 	})
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -45,5 +49,4 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-
 end) 
