@@ -20,8 +20,15 @@ return require('packer').startup(function(use)
 		as = 'everforest',
 		config = function()
 			vim.cmd('colorscheme everforest')
+            vim.cmd("highlight Normal guibg=none ctermbg=None")
 		end
 	})
+    use(
+    use( 'preservim/nerdtree')
+       'morhetz/gruvbox',
+        as='gruvbox'
+    })
+
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground') 
 	use('theprimeagen/harpoon')
@@ -49,4 +56,5 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
+    use( 'ryanoasis/vim-devicons' )
 end) 
