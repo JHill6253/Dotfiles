@@ -105,7 +105,6 @@ _G.packer_plugins = {
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   everforest = {
-    config = { "\27LJ\2\2s\0\0\2\0\4\0\t6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\1K\0\1\0-highlight Normal guibg=none ctermbg=None\27colorscheme everforest\bcmd\bvim\0" },
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
@@ -116,6 +115,7 @@ _G.packer_plugins = {
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   gruvbox = {
+    config = { "\27LJ\2\2p\0\0\2\0\4\0\t6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\1K\0\1\0-highlight Normal guibg=none ctermbg=None\24colorscheme gruvbox\bcmd\bvim\0" },
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
@@ -144,6 +144,26 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-python"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
+    url = "https://github.com/mfussenegger/nvim-dap-python"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
+    url = "https://github.com/TheHamsta/nvim-dap-virtual-text"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -175,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/john/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/home/john/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -185,11 +210,6 @@ _G.packer_plugins = {
     path = "/home/john/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "https://github.com/ryanoasis/vim-devicons"
-  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -198,10 +218,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: everforest
-time([[Config for everforest]], true)
-try_loadstring("\27LJ\2\2s\0\0\2\0\4\0\t6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\1K\0\1\0-highlight Normal guibg=none ctermbg=None\27colorscheme everforest\bcmd\bvim\0", "config", "everforest")
-time([[Config for everforest]], false)
+-- Config for: gruvbox
+time([[Config for gruvbox]], true)
+try_loadstring("\27LJ\2\2p\0\0\2\0\4\0\t6\0\0\0009\0\1\0'\1\2\0B\0\2\0016\0\0\0009\0\1\0'\1\3\0B\0\2\1K\0\1\0-highlight Normal guibg=none ctermbg=None\24colorscheme gruvbox\bcmd\bvim\0", "config", "gruvbox")
+time([[Config for gruvbox]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

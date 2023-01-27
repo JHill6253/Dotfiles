@@ -15,32 +15,32 @@ return require('packer').startup(function(use)
 		'rose-pine/neovim',
 		as = 'rose-pine'})
 
-	use({
-		'sainnhe/everforest',
-		as = 'everforest',
-		config = function()
-			vim.cmd('colorscheme everforest')
-            vim.cmd("highlight Normal guibg=none ctermbg=None")
-		end
-	})
-    use(
-    use( 'preservim/nerdtree')
-       'morhetz/gruvbox',
-        as='gruvbox'
-    })
-
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('nvim-treesitter/playground') 
-	use('theprimeagen/harpoon')
-	use('mbbill/undotree')
-	use('tpope/vim-fugitive')
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
+        use({
+            'sainnhe/everforest',
+            as = 'everforest',
+        })
+        use({
+            'morhetz/gruvbox',
+            as='gruvbox',
+            config = function()
+                vim.cmd('colorscheme gruvbox')
+                vim.cmd("highlight Normal guibg=none ctermbg=None")
+            end
+        })
+        use ('mfussenegger/nvim-dap-python')
+        use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+        use('nvim-treesitter/playground')
+        use ('mfussenegger/nvim-dap')
+        use('theprimeagen/harpoon')
+        use('mbbill/undotree')
+        use('tpope/vim-fugitive')
+        use {
+            'VonHeikemen/lsp-zero.nvim',
+            requires = {
+                -- LSP Support
+                {'neovim/nvim-lspconfig'},
+                {'williamboman/mason.nvim'},
+                {'williamboman/mason-lspconfig.nvim'},
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
@@ -56,5 +56,7 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-    use( 'ryanoasis/vim-devicons' )
-end) 
+    use('TheHamsta/nvim-dap-virtual-text')
+    use('rcarriga/nvim-dap-ui')
+    use("nvim-telescope/telescope-dap.nvim")
+end)
