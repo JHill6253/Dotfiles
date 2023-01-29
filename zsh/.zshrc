@@ -76,12 +76,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm python)
+plugins=(git nvm python zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+bindkey -v
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

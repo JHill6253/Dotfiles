@@ -145,26 +145,6 @@ _G.packer_plugins = {
     path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-python"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap-python",
-    url = "https://github.com/mfussenegger/nvim-dap-python"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-dap-virtual-text"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
-    url = "https://github.com/TheHamsta/nvim-dap-virtual-text"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -194,11 +174,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/john/.local/share/nvim/site/pack/packer/start/rose-pine",
     url = "https://github.com/rose-pine/neovim"
-  },
-  ["telescope-dap.nvim"] = {
-    loaded = true,
-    path = "/home/john/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
-    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
