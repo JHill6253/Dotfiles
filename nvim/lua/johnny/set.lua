@@ -1,3 +1,4 @@
+local cmd = vim.cmd
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -30,3 +31,10 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+cmd [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]]

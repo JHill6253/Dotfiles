@@ -27,10 +27,8 @@ return require('packer').startup(function(use)
                 vim.cmd("highlight Normal guibg=none ctermbg=None")
             end
         })
-        use ('mfussenegger/nvim-dap-python')
         use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
         use('nvim-treesitter/playground')
-        use ('mfussenegger/nvim-dap')
         use('theprimeagen/harpoon')
         use('mbbill/undotree')
         use('tpope/vim-fugitive')
@@ -56,7 +54,4 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'},
 		}
 	}
-    use('TheHamsta/nvim-dap-virtual-text')
-    use('rcarriga/nvim-dap-ui')
-    use("nvim-telescope/telescope-dap.nvim")
 end)
