@@ -27,11 +27,13 @@ return require('packer').startup(function(use)
                 vim.cmd("highlight Normal guibg=none ctermbg=None")
             end
         })
+        use ('puremourning/vimspector')
         use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
         use('nvim-treesitter/playground')
         use('theprimeagen/harpoon')
         use('mbbill/undotree')
         use('tpope/vim-fugitive')
+        use('theprimeagen/vim-be-good')
         use {
             'VonHeikemen/lsp-zero.nvim',
             requires = {
