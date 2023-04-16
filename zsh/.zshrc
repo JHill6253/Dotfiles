@@ -113,6 +113,21 @@ if [ $OS = "Linux" ]; then
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
 fi
+
+eval "$(zoxide init zsh)"
+
+alias ls='exa'
+alias ll='exa -alh'
+alias tree='exa --tree'
+alias cd='z'
+if command -v bat > /dev/null; then
+    alias cat='bat'
+fi
+
+
+
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
