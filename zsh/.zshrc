@@ -8,16 +8,17 @@ fi
 OS="`uname`"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# Import brew
+export PATH=/opt/homebrew/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+#alias lazyvim="NVIM_APPNAME=lazyvim nvim"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -77,7 +78,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm python zsh-syntax-highlighting)
+plugins=(git nvm python macos)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,9 +106,7 @@ export EDITOR='nvim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias -g vi="nvim"
-alias -g reload="source ~/.zshrc"
-
+source ~/.zsh_profile
 # Pbcopy replacement because I am mac cuck
 if [ $OS = "Linux" ]; then 
     alias pbcopy='xsel --clipboard --input'
@@ -116,24 +115,30 @@ fi
 
 eval "$(zoxide init zsh)"
 
-alias ls='exa'
-alias ll='exa -alh'
-alias tree='exa --tree'
-alias cd='z'
-if command -v bat > /dev/null; then
-    alias cat='bat'
-fi
-
-
-
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Load alias 
+dir="$HOME/.alias"
+
+# Check if the directory exists in the path
+if [[ -d "$dir" ]]; then
+    # If it does, source every file that starts with .alias and ends with .zsh
+    for file in "$dir"/.alias*.zsh; do
+        if [[ -f "$file" ]]; then
+            source "$file"
+        fi
+    done
+else
+    echo "Directory $dir does not exist."
+fi
+
+
 # Paths
 export PATH="$PATH:/home/john/.dotnet/"
 PATH="$PATH:$(python3 -m site --user-base)/bin"
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
