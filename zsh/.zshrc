@@ -121,7 +121,7 @@ eval "$(zoxide init zsh)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Load alias 
-dir="$HOME/.alias"
+dir="$HOME/alias"
 
 # Check if the directory exists in the path
 if [[ -d "$dir" ]]; then
