@@ -1,0 +1,4 @@
+cmd - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
+
+# open Chrome.
+cmd + shift - return : open -n -a "Google Chrome"
