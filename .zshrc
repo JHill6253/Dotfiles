@@ -11,7 +11,6 @@ source_if_exists () {
 
 source_if_exists $DOTFILES/zsh/alias.zsh
 source_if_exists $DOTFILES/zsh/p10k.zsh
-source_if_exists $DOTFILES/bin/scripts/np.sh
 
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -44,11 +43,11 @@ eval "$(zoxide init zsh)"
 
 # Paths
 PATH="$PATH:$(python3 -m site --user-base)/bin"
-export NVM_DIR="$HOME/.nvm"
 export SCRIPTS="$HOME/.local/bin/scripts"
 export PATH="$PATH:$SCRIPTS"
 
 
+export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 source ~/powerlevel10k/powerlevel10k.zsh-theme

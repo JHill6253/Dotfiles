@@ -1,2 +1,3 @@
 .ssh/
 .vscode/
+.config/github-copilot/hosts.json

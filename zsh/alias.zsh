@@ -26,7 +26,9 @@ alias am="zsh $HOME/bin/scripts/am.sh"
 alias rmnm="rm -r node_modules"
 #alias .f=cd ~/dotfiles
 #alias lazyvim="NVIM_APPNAME=lazyvim nvim"
-alias lazyvim="NVIM_APPNAME=lazyvim nvim"
+#alias lvi="NVIM_APPNAME=lazyvim nvim"
+alias lzvim="NVIM_APPNAME=lzvim nvim"
 alias nvchad="NVIM_APPNAME=nvchad nvim"
+
 alias gcs='gh copilot suggest'
 alias gce='gh copilot explain'
