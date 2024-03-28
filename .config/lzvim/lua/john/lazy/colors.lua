@@ -1,7 +1,6 @@
 function ColorMyPencils(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
-
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
@@ -29,7 +28,15 @@ return {
             })
         end
     },
+    {
+        'sainnhe/everforest',
+         name = 'everforest',
+        config = function()
+            vim.cmd("colorscheme everforest")
 
+            ColorMyPencils()
+        end
+    },
     {
         "rose-pine/neovim",
         name = "rose-pine",
@@ -42,6 +49,18 @@ return {
 
             ColorMyPencils()
         end
+    },
+    {
+            'morhetz/gruvbox',
+            name='gruvbox',
+            config = function()
+                vim.cmd('colorscheme gruvbox')
+                vim.cmd("highlight Normal guibg=none ctermbg=None")
+            end
+    },
+    {
+        "catppuccin/nvim",
+        name = "catppuccino",
     },
 
 

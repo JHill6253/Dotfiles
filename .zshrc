@@ -19,7 +19,7 @@ fi
 
 alias vi="nvim"
 
-# Set vars 
+# Set vars
 
 # plugins=(git nvm python macos)
 
@@ -27,7 +27,7 @@ alias vi="nvim"
 # User configuration
 bindkey -v
 export EDITOR='nvim'
-if [ $OS = "Linux" ]; then 
+if [ $OS = "Linux" ]; then
     alias pbcopy='xsel --clipboard --input'
     alias pbpaste='xsel --clipboard --output'
 fi
@@ -51,4 +51,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $DOTFILES/zsh/zsh-plugs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $DOTFILES/zsh/zsh-plugs/fzf-dir-navigator/fzf-dir-navigator.zsh
