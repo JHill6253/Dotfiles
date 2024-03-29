@@ -14,8 +14,8 @@ alias tree='eza --tree'
 if command -v bat > /dev/null; then
     alias cat='bat'
 fi
-alias lzvim="NVIM_APPNAME=lzvim nvim"
-alias vi="lzvim"
+# alias lzvim="NVIM_APPNAME=lzvim nvim"
+alias vi="nvim"
 #-------Locations--------
 alias repos="cd $HOME/Repos/"
 alias dotf="cd $HOME/dotfiles/"
