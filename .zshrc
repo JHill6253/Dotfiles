@@ -10,8 +10,8 @@ source_if_exists () {
     fi
 }
 
-#source_if_exists $DOTFILES/zsh/alias.zsh
-#source_if_exists $DOTFILES/zsh/p10k.zsh
+source_if_exists $DOTFILES/zsh/alias.zsh
+source_if_exists $DOTFILES/zsh/p10k.zsh
 
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -38,7 +38,7 @@ eval "$(zoxide init zsh)"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/p10k.zsh ]] || source ~/p10k.zsh
+# [[ ! -f ~/p10k.zsh ]] || source ~/p10k.zsh
 
 
 
@@ -53,11 +53,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Source zsh crap
-# write for loop to source zsh files in directory
-
 for file in $ZSH_DIR/zsh-plugs/*.zsh; do
   source $file
 done
+# add bin to path
+for file in $DOTFILES/bin/*; do
+    export PATH=$PATH:$file
+    done
+
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source $DOTFILES/zsh/zsh-plugs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOTFILES/zsh/zsh-plugs/fzf-dir-navigator/fzf-dir-navigator.zsh
