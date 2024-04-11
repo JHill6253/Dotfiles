@@ -44,7 +44,7 @@ eval "$(zoxide init zsh)"
 
 # Paths
 PATH="$PATH:$(python3 -m site --user-base)/bin"
-export SCRIPTS="$HOME/.local/bin/scripts"
+export SCRIPTS="$HOME/bin/"
 export PATH="$PATH:$SCRIPTS"
 export GEM_HOME="$HOME/.gem"
 
@@ -59,8 +59,9 @@ done
 # add bin to path
 for file in $DOTFILES/bin/*; do
     export PATH=$PATH:$file
-    done
+done
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 source $DOTFILES/zsh/zsh-plugs/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOTFILES/zsh/zsh-plugs/fzf-dir-navigator/fzf-dir-navigator.zsh
+# source $DOTFILES/bin/statementToCSV
