@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+if [[ -z $1 ]]; then
+  echo "Please provide a session name"
+  exit 1
+fi
+
+Z_QUERY_RES=$(zoxide query $1)
+echo $Z_QUERY_RES
+
+DIR=$(basename $Z_QUERY_RES)
+echo $DIR
+
+SESH=$(tmux list-sessions | rg $DIR | awk '{print $1}')
+SESH=${SESH//:/}
+if [ -z $TMUX ]; then
+    echo "Not in tmux"
+    if [ -z $SESH ]; then
+        echo "No tmux session found"
+        cd $Z_QUERY_RES
+        tmux new-session -s $DIR
+    else
+        echo "Attaching to existing session: $SESH"
+        tmux attach-session -t $SESH
+    fi
+else
+    echo "In tmux"
+    if [ -z $SESH ]; then
+        echo "No tmux session found"
+        cd $Z_QUERY_RES
+        tmux new-session -d -s $DIR
+        tmux switch-client -t $DIR
+  else
+    tmux switch-client -t $SESH
+  fi
+fi

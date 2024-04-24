@@ -1,14 +1,24 @@
-function ColorMyPencils(color)
-	color = color or "rose-pine"
+
+function ColorMe(color)
+    local colors = {
+        ["tokyo"] = "tokyonight",
+        ["everforest"] = "everforest",
+        ["rose-pine"] = "rose-pine",
+        ["gruvbox"] = "gruvbox",
+        ["cat"] = "catppuccin"
+    }
+	color = colors[color] or "rose-pine"
 	vim.cmd.colorscheme(color)
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 end
-
+-- how can I remap this to a keybinding?
+vim.api.nvim_set_keymap('n', '<leader>cc', ':lua ColorMe("cat")<CR>', { noremap = true, silent = true })
 return {
     {
         "folke/tokyonight.nvim",
+        name="tokyonight",
         config = function()
             require("tokyonight").setup({
                 -- your configuration comes here
@@ -30,11 +40,11 @@ return {
     },
     {
         'sainnhe/everforest',
-         name = 'everforest',
+        name = 'everforest',
         config = function()
             vim.cmd("colorscheme everforest")
 
-            ColorMyPencils()
+            ColorMe()
         end
     },
     {
@@ -47,21 +57,18 @@ return {
 
             vim.cmd("colorscheme rose-pine")
 
-            ColorMyPencils()
+            ColorMe()
         end
     },
     {
-            'morhetz/gruvbox',
-            name='gruvbox',
-            config = function()
-                vim.cmd('colorscheme gruvbox')
-                vim.cmd("highlight Normal guibg=none ctermbg=None")
-            end
+        'morhetz/gruvbox',
+        name='gruvbox',
+        config = function()
+            vim.cmd('colorscheme gruvbox')
+            vim.cmd("highlight Normal guibg=none ctermbg=None")
+            ColorMe()
+        end
     },
-    {
-        "catppuccin/nvim",
-        name = "catppuccino",
-    },
-
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
 
 }
