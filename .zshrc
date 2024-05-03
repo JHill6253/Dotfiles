@@ -1,6 +1,8 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH=/opt/homebrew/bin:$PATH
-export THEME_COLOR="gruvbox"
+export THEME_COLOR="cat-mac"
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob=!{.git,.svn,node_modules,.azure,Trash,Library,.local,Movies,Music,cache,.docker}'
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -22,12 +24,13 @@ plugins=(git nvm python macos web-search )
 source_if_exists $ZSH/oh-my-zsh.sh
 source_if_exists $HOME/zsh/alias.zsh
 
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+[[ -f ~/.config/p10k/p10k.zsh ]] && source ~/.config/p10k/p10k.zsh
 # User configuration
 bindkey -v
 export EDITOR='nvim'
 
 eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
 
 # Paths
 export SCRIPTS="$HOME/bin/"

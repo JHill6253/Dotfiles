@@ -1,0 +1,2 @@
+--glob=!{.git,.svn,node_modules,.azure,Trash,Library,.local,Movies,Music,cache,.docker}
+--glob=!*.{lock}
