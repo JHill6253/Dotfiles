@@ -7,6 +7,10 @@ alias ls='eza'
 alias ll='eza -alh'
 alias tree='eza --tree'
 alias tgig='touch .gitignore;'
+alias pn='pnpm'
+alias pni='pnpm install'
+alias pnu='pnpm update'
+alias pnlp='pnpm m ls --depth -1 --json'
 if command -v bat > /dev/null; then
     alias cat='bat'
 fi
