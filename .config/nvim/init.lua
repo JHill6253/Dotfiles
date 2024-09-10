@@ -13,7 +13,6 @@ local function safeRequire(module)
 
   vim.notify("Error loading " .. module)
 end
-
 -- Built-ins
 safeRequire("netrw")
 safeRequire("options")

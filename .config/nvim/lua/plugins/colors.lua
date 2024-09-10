@@ -14,7 +14,7 @@ function ColorMe(color)
 
 end
 -- how can I remap this to a keybinding?
-vim.api.nvim_set_keymap('n', '<leader>cc', ':lua ColorMe("cat")<CR>', { noremap = true, silent = true })
+  --vim.api.nvim_set_keymap('n', '<leader>cc', ':lua ColorMe("cat")<CR>', { noremap = true, silent = true })
 return {
     {
         "folke/tokyonight.nvim",

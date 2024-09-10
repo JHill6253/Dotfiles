@@ -1,9 +1,14 @@
-local function keymap(modes, lhs, rhs, opts)
+
+local function test(lhs, modes, opts, rhs)
     if not opts then
         opts = {}
     end
     opts.unique = true
     vim.keymap.set(modes, lhs, rhs, opts)
+end
+
+local function keymap(modes, lhs, rhs, opts)
+test(lhs, modes, opts, rhs)
 end
 -- open netrw
 keymap("n", "<leader>pv", vim.cmd.Ex)
@@ -27,14 +32,14 @@ keymap({ "n", "v" }, "<leader>d", [["_d]]) -- delete without yanking
 -- etc
 keymap("i", "<C-c>", "<Esc>")
 --keymap("n", "Q", "<nop>") -- Disable Ex mode
-keymap("n", "<leader>f", vim.lsp.buf.format)
+keymap("n", "<leader>f", vim.lsp.buf.format, { desc = "[F]ormat" })
 
 -- Folds
 keymap({ "n", "v" }, "<Tab>", "za", { desc = "Toggle folds" })
 keymap({ "n", "v" }, "zz", "zf", { desc = "Define fold" })
 
 -- Quickfix
-keymap("n", "<leader>q", require("util").toggle_quickfix, { desc = "Toggle [q]uickfix list" })
+keymap("n", "<leader>qt", require("util").toggle_quickfix, { desc = "Toggle [q]uickfix list" })
 keymap("n", "<C-k>", "<cmd>cnext<CR>zz")     -- next quickfix
 keymap("n", "<C-j>", "<cmd>cprev<CR>zz")     -- previous quickfix
 keymap("n", "<leader>k", "<cmd>lnext<CR>zz") -- next location list
@@ -72,5 +77,9 @@ keymap("n", "<leader>if", ":Refactor inline_func")
 keymap("n", "<leader>xb", ":Refactor extract_block")
 keymap("n", "<leader>xB", ":Refactor extract_block_to_file")
 
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap("n", "<leader>xx", "<cmd>!chmod +x %<CR>", { silent = true })
+
+keymap("n", "<leader>cpd", ":Copilot disable", { desc = "[C]o[P]ilot [D]isable" })
+keymap("n", "<leader>cpe", ":Copilot enable", { desc = "[C]o[P]ilot [E]nable" })
+

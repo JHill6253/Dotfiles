@@ -8,7 +8,7 @@ vim.api.nvim_create_augroup("folds", { clear = true })
 vim.api.nvim_create_augroup("neotest", { clear = true })
 vim.api.nvim_create_augroup("nvim_config", { clear = true })
 vim.api.nvim_create_augroup("telescope", { clear = true })
-vim.api.nvim_create_augroup("terminal", { clear = true })
+--vim.api.nvim_create_augroup("terminal", { clear = true })
 vim.api.nvim_create_augroup("winbar", { clear = true })
 vim.api.nvim_create_augroup("yank_highlight", { clear = true })
 
@@ -47,11 +47,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 -- Map Ctrl-c even when not in insertmode
-vim.api.nvim_create_autocmd("TermOpen", {
-    group = "terminal",
-    pattern = { "*" },
-    command = "nnoremap <buffer> <C-c> i<C-c>",
-})
+--vim.api.nvim_create_autocmd("TermOpen", {
+    --group = "terminal",
+    --pattern = { "*" },
+    --command = "nnoremap <buffer> <C-c> i<C-c>",
+--})
 
 vim.api.nvim_create_autocmd("BufEnter", {
     desc = "Clear editor clutter for telescope windows",
@@ -147,30 +147,30 @@ vim.api.nvim_create_autocmd({ "BufLeave" }, {
     end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWinEnter", "BufFilePost", "BufWritePost", "CursorHold", "CursorHoldI" }, {
-    desc = "Set winbar to filename, when possible",
-    group = "winbar",
-    pattern = { "*" },
-    callback = function()
-        local filetype_exclude = {
-            "dashboard",
-            "fugitive",
-            "gitcommit",
-            "help",
-            "lspinfo",
-            "NvimTree",
-            "packer",
-            "qf",
-        }
+--vim.api.nvim_create_autocmd({ "BufWinEnter", "BufFilePost", "BufWritePost", "CursorHold", "CursorHoldI" }, {
+    --desc = "Set winbar to filename, when possible",
+    --group = "winbar",
+    --pattern = { "*" },
+    --callback = function()
+        --local filetype_exclude = {
+            --"dashboard",
+            --"fugitive",
+            --"gitcommit",
+            --"help",
+            --"lspinfo",
+            --"NvimTree",
+            --"packer",
+            --"qf",
+        --}
 
-        local filename = util.filename()
-        if vim.fn.winheight(0) <= 1 or filename == "[No Name]" or vim.tbl_contains(filetype_exclude, vim.bo.filetype) then
-            return
-        end
+        --local filename = util.filename()
+        --if vim.fn.winheight(0) <= 1 or filename == "[No Name]" or vim.tbl_contains(filetype_exclude, vim.bo.filetype) then
+            --return
+        --end
 
-        vim.opt_local.winbar = filename
-    end,
-})
+        --vim.opt_local.winbar = filename
+    --end,
+--})
 
 for _, ft in ipairs({ "output", "attach", "summary" }) do
     vim.api.nvim_create_autocmd("FileType", {
@@ -196,6 +196,11 @@ vim.filetype.add({
     extension = {
         templ = 'templ',
     }
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = "cleanup",
+    pattern = { "*" },
+    command = [[%s/\s\+$//e]],
 })
 
 

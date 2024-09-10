@@ -20,6 +20,7 @@ return {
     for i, ls in ipairs(language_servers) do
       for k, v in pairs(require("tools").renames) do
         if ls == k then
+          print("Renaming", ls, "to", v)
           language_servers[i] = v
         end
       end
